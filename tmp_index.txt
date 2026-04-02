@@ -1,0 +1,682 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vishesh Tomar | Portfolio</title>
+  <meta name="description" content="Vishesh Tomar â?" Computer Science Engineer, Data Enthusiast & Problem Solver." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;600;700;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===== PRELOADER ===== -->
+  <div id="preloader">
+    <div class="pre-bg"></div>
+    <!-- Scanning lines -->
+    <div class="scan-line"></div>
+    <!-- HUD corners -->
+    <div class="hud-corner hud-tl"></div>
+    <div class="hud-corner hud-tr"></div>
+    <div class="hud-corner hud-bl"></div>
+    <div class="hud-corner hud-br"></div>
+    <!-- Central 3D loader -->
+    <div class="pre-center">
+      <div class="pre-ring-wrap">
+        <div class="pre-ring pr-1"><span class="pr-dot"></span></div>
+        <div class="pre-ring pr-2"><span class="pr-dot"></span></div>
+        <div class="pre-ring pr-3"><span class="pr-dot"></span></div>
+        <div class="pre-ring pr-4"><span class="pr-dot"></span></div>
+        <div class="pre-core"><span>VT</span></div>
+        <div class="pre-pulse-1"></div>
+        <div class="pre-pulse-2"></div>
+      </div>
+      <div class="pre-brand">VISHESH TOMAR</div>
+      <div class="pre-tagline">Initializing Portfolio <span class="pre-dots"></span></div>
+      <div class="pre-bar-wrap">
+        <div class="pre-bar">
+          <div class="pre-progress" id="pre-progress"></div>
+        </div>
+        <span class="pre-percent" id="pre-percent">0%</span>
+      </div>
+      <div class="pre-status" id="pre-status">Loading assets...</div>
+    </div>
+    <!-- Grid overlay -->
+    <div class="pre-grid"></div>
+    <!-- Floating data -->
+    <div class="pre-data pre-d1">01101000</div>
+    <div class="pre-data pre-d2">SYSTEM::OK</div>
+    <div class="pre-data pre-d3">ML::READY</div>
+    <div class="pre-data pre-d4">DSA::150+</div>
+  </div>
+
+  <!-- ===== COLOR TRAIL CANVAS ===== -->
+  <canvas id="trail-canvas"></canvas>
+
+  <!-- ===== CUSTOM CURSOR ===== -->
+  <div id="cursor">
+    <div class="cur-inner"></div>
+  </div>
+  <div id="cursor-ring"></div>
+
+  <!-- ===== NAV ===== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>VT<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+        <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
+        <li><a href="#training" class="nav-link" data-text="Training">Training</a></li>
+        <li><a href="#certs" class="nav-link" data-text="Certs">Certs</a></li>
+        <li><a href="#education" class="nav-link" data-text="Education">Education</a></li>
+        <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <canvas id="particles-canvas"></canvas>
+    <!-- Chromatic orbs -->
+    <div class="orb orb-cyan"></div>
+    <div class="orb orb-purple"></div>
+    <div class="orb orb-pink"></div>
+    <div class="hero-grid-lines"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge reveal-hero">
+        <span class="pulse-dot"></span>
+        <span>Open to Opportunities</span>
+        <span class="badge-glow"></span>
+      </div>
+      <h1 class="hero-name reveal-hero">
+        <span class="name-word">Vishesh</span>
+        <span class="name-word gradient-text">Tomar</span>
+      </h1>
+      <div class="hero-role-wrap reveal-hero">
+        <span class="role-prefix">I'm a </span>
+        <span id="typewriter" class="typewriter-text"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+      <p class="hero-desc reveal-hero">Computer Science Engineer passionate about building intelligent systems, solving
+        complex problems, and turning data into meaningful insights.</p>
+      <div class="hero-cta reveal-hero">
+        <a href="#projects" class="btn btn-primary" id="hero-btn-1">
+          <span class="btn-bg"></span>
+          <i class="fas fa-rocket"></i><span>View Projects</span>
+        </a>
+        <a href="#contact" class="btn btn-outline" id="hero-btn-2">
+          <i class="fas fa-paper-plane"></i><span>Let's Connect</span>
+        </a>
+      </div>
+      <div class="hero-socials reveal-hero">
+        <a href="https://linkedin.com/in/Vishesh-tomar09" target="_blank" class="social-link" title="LinkedIn"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/thakursahab9910" target="_blank" class="social-link" title="GitHub"><i
+            class="fab fa-github"></i></a>
+        <a href="mailto:Visheshrajput9310@gmail.com" class="social-link" title="Email"><i
+            class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+
+    <!-- 3D Hero Card -->
+    <div class="hero-3d-wrap" id="hero-3d-wrap">
+      <div class="hero-card" id="hero-card">
+        <div class="hc-inner">
+          <!-- Rotating rings -->
+          <div class="ring r1">
+            <div class="ring-dot rd1"></div>
+          </div>
+          <div class="ring r2">
+            <div class="ring-dot rd2"></div>
+          </div>
+          <div class="ring r3">
+            <div class="ring-dot rd3"></div>
+          </div>
+          <div class="ring r4">
+            <div class="ring-dot rd4"></div>
+          </div>
+          <!-- Avatar -->
+          <div class="hc-avatar">
+            <img src="profile.jpg" alt="Vishesh Tomar" class="hc-profile-img">
+            <div class="hc-img-glare"></div>
+          </div>
+          <!-- Stats -->
+          <div class="hc-stats">
+            <div class="hc-stat"><span class="st-num" data-target="150">0</span><span class="st-plus">+</span><span
+                class="st-label">DSA</span></div>
+            <div class="hc-sep"></div>
+            <div class="hc-stat"><span class="st-num" data-target="3">0</span><span class="st-plus">+</span><span
+                class="st-label">Projects</span></div>
+            <div class="hc-sep"></div>
+            <div class="hc-stat"><span class="st-num" data-target="7">0</span><span class="st-plus">.</span><span
+                class="st-num st-fixed">0</span><span class="st-label">CGPA</span></div>
+          </div>
+          <!-- Floating pills -->
+          <span class="hp hp-py">Python</span>
+          <span class="hp hp-ml">ML</span>
+          <span class="hp hp-java">Java</span>
+          <span class="hp hp-ds">Data Sci</span>
+          <!-- Holographic shimmer -->
+          <div class="hc-shine"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <div class="sh-mouse">
+        <div class="sh-wheel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section">
+    <div class="sec-bg-glow glow-cyan-l"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// about me</span>
+        <h2 class="section-title">Who Am <span class="gradient-text">I?</span></h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>I'm <strong class="hl-cyan">Vishesh Tomar</strong>, a B.Tech CSE student at <strong
+              class="hl-purple">Lovely Professional University</strong> with a CGPA of <strong
+              class="hl-cyan">7.00</strong>.</p>
+          <p>Passionate about <strong class="hl-purple">Data Science</strong>, <strong class="hl-cyan">Machine
+              Learning</strong>, and <strong class="hl-pink">Algorithmic Problem Solving</strong>. I love building
+            scalable, data-driven systems.</p>
+          <p>Outside of tech, I'm a team player who tackles problems with creativity and adaptability.</p>
+          <div class="contact-pills">
+            <a href="mailto:Visheshrajput9310@gmail.com" class="cpill cpill-cyan"><i
+                class="fas fa-envelope"></i>Visheshrajput9310@gmail.com</a>
+            <a href="tel:+911234567890" class="cpill cpill-purple"><i class="fas fa-phone"></i>+91-1234567890</a>
+          </div>
+        </div>
+        <div class="about-cards reveal">
+          <div class="acard tilt-card" data-color="cyan">
+            <div class="acard-glow"></div>
+            <i class="fas fa-graduation-cap acard-icon"></i>
+            <h3>B.Tech CSE</h3>
+            <p>Lovely Professional University</p>
+            <span class="acard-tag">Since Aug '23</span>
+          </div>
+          <div class="acard tilt-card" data-color="purple">
+            <div class="acard-glow"></div>
+            <i class="fas fa-map-marker-alt acard-icon"></i>
+            <h3>Location</h3>
+            <p>Phagwara, Punjab</p>
+            <span class="acard-tag">India</span>
+          </div>
+          <div class="acard tilt-card" data-color="pink">
+            <div class="acard-glow"></div>
+            <i class="fas fa-brain acard-icon"></i>
+            <h3>Focus Area</h3>
+            <p>Data Science & ML</p>
+            <span class="acard-tag">Active</span>
+          </div>
+          <div class="acard tilt-card" data-color="cyan">
+            <div class="acard-glow"></div>
+            <i class="fas fa-trophy acard-icon"></i>
+            <h3>DSA Warrior</h3>
+            <p>150+ Problems Solved</p>
+            <span class="acard-tag">Silver Badge</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="section section-dark">
+    <div class="sec-bg-glow glow-purple-r"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// arsenal</span>
+        <h2 class="section-title">Skills & <span class="gradient-text">Technologies</span></h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-cat reveal tilt-card" data-color="cyan">
+          <div class="sc-glow"></div>
+          <div class="sc-header"><i class="fas fa-code"></i>
+            <h3>Languages</h3>
+          </div>
+          <div class="sc-pills">
+            <span class="spill sp-c"><i class="fab fa-python"></i>Python</span>
+            <span class="spill sp-p"><i class="fab fa-java"></i>Java</span>
+            <span class="spill sp-c">C</span>
+            <span class="spill sp-p">C++</span>
+          </div>
+        </div>
+        <div class="skill-cat reveal tilt-card" data-color="purple">
+          <div class="sc-glow"></div>
+          <div class="sc-header"><i class="fas fa-layer-group"></i>
+            <h3>Frameworks & Libs</h3>
+          </div>
+          <div class="sc-pills">
+            <span class="spill sp-c">Pandas</span>
+            <span class="spill sp-p">NumPy</span>
+            <span class="spill sp-c">Scikit-learn</span>
+            <span class="spill sp-p">Matplotlib</span>
+            <span class="spill sp-c">Seaborn</span>
+            <span class="spill sp-p"><i class="fab fa-html5"></i>HTML</span>
+            <span class="spill sp-c"><i class="fab fa-css3-alt"></i>CSS</span>
+          </div>
+        </div>
+        <div class="skill-cat reveal tilt-card" data-color="pink">
+          <div class="sc-glow"></div>
+          <div class="sc-header"><i class="fas fa-tools"></i>
+            <h3>Tools & Platforms</h3>
+          </div>
+          <div class="sc-pills">
+            <span class="spill sp-k"><i class="fab fa-github"></i>GitHub</span>
+            <span class="spill sp-c">Git</span>
+            <span class="spill sp-p">Jupyter</span>
+            <span class="spill sp-k">Google Colab</span>
+            <span class="spill sp-c">MS Excel</span>
+            <span class="spill sp-p">Power BI</span>
+            <span class="spill sp-k">Tableau</span>
+          </div>
+        </div>
+        <div class="skill-cat reveal tilt-card" data-color="cyan">
+          <div class="sc-glow"></div>
+          <div class="sc-header"><i class="fas fa-brain"></i>
+            <h3>Core Concepts</h3>
+          </div>
+          <div class="sc-pills">
+            <span class="spill sp-c">DSA</span>
+            <span class="spill sp-p">OOP</span>
+            <span class="spill sp-c">Machine Learning</span>
+            <span class="spill sp-p">Data Analysis</span>
+            <span class="spill sp-k">OS</span>
+            <span class="spill sp-c">Database</span>
+          </div>
+        </div>
+        <div class="skill-cat reveal tilt-card" data-color="purple">
+          <div class="sc-glow"></div>
+          <div class="sc-header"><i class="fas fa-users"></i>
+            <h3>Soft Skills</h3>
+          </div>
+          <div class="sc-pills">
+            <span class="spill sp-c">Problem-Solving</span>
+            <span class="spill sp-p">Team Player</span>
+            <span class="spill sp-k">Project Management</span>
+            <span class="spill sp-c">Adaptability</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section">
+    <div class="sec-bg-glow glow-cyan-r"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// work</span>
+        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="projects-grid">
+
+        <div class="proj-card reveal tilt-card" data-color="cyan">
+          <div class="pc-top-bar"></div>
+          <div class="pc-glow"></div>
+          <div class="pc-header">
+            <div class="pc-icon-wrap"><i class="fas fa-leaf"></i></div>
+            <div class="pc-badges">
+              <span class="pc-date">Nov 2025</span>
+              <span class="pc-status done">âo" Completed</span>
+            </div>
+          </div>
+          <h3 class="pc-title">ML Research â?" Supply Chain Emissions</h3>
+          <p class="pc-desc">ML framework to <strong>predict & classify</strong> supply chain greenhouse gas emissions
+            enabling data-driven sustainability insights.</p>
+          <ul class="pc-list">
+            <li>Regression, Classification & Clustering models</li>
+            <li>Random Forest, Logistic Regression, Naive Bayes, PCA, K-Means</li>
+            <li>Proper preprocessing and evaluation metrics</li>
+          </ul>
+          <div class="pc-stack">
+            <span>Python</span><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span><span>Matplotlib</span><span>Seaborn</span>
+          </div>
+          <a href="#" class="pc-link"><i class="fab fa-github"></i> View on GitHub</a>
+        </div>
+
+        <div class="proj-card reveal tilt-card" data-color="purple">
+          <div class="pc-top-bar"></div>
+          <div class="pc-glow"></div>
+          <div class="pc-header">
+            <div class="pc-icon-wrap"><i class="fas fa-database"></i></div>
+            <div class="pc-badges">
+              <span class="pc-date">Nov 2025</span>
+              <span class="pc-status done">âo" Completed</span>
+            </div>
+          </div>
+          <h3 class="pc-title">Library Management Dashboard</h3>
+          <p class="pc-desc">Full-stack <strong>Library Web App</strong> with secure upload, share, and access of
+            digital resources reducing manual operations.</p>
+          <ul class="pc-list">
+            <li>HashMap-based authentication with role-based access control</li>
+            <li>Distinct privileges for admin and general users</li>
+            <li>Fast data retrieval and improved operations</li>
+          </ul>
+          <div class="pc-stack">
+            <span>Java</span><span>Java
+              Swing</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>HashMap</span>
+          </div>
+          <a href="#" class="pc-link"><i class="fab fa-github"></i> View on GitHub</a>
+        </div>
+
+        <div class="proj-card reveal tilt-card" data-color="pink">
+          <div class="pc-top-bar"></div>
+          <div class="pc-glow"></div>
+          <div class="pc-header">
+            <div class="pc-icon-wrap"><i class="fas fa-chart-line"></i></div>
+            <div class="pc-badges">
+              <span class="pc-date">May 2025</span>
+              <span class="pc-status done">âo" Completed</span>
+            </div>
+          </div>
+          <h3 class="pc-title">EDA â?" COVID-19 Mortality Dataset</h3>
+          <p class="pc-desc">Analyzed the <strong>COVID-19 mortality dataset</strong> to extract health insights and
+            trends related to pandemic fatalities.</p>
+          <ul class="pc-list">
+            <li>Full Exploratory Data Analysis with Python libraries</li>
+            <li>Identified trends related to pandemic fatalities</li>
+            <li>Visualised data using Seaborn & Matplotlib</li>
+          </ul>
+          <div class="pc-stack">
+            <span>Python</span><span>Pandas</span><span>NumPy</span><span>Seaborn</span><span>Matplotlib</span><span>SciPy</span>
+          </div>
+          <a href="#" class="pc-link"><i class="fab fa-github"></i> View on GitHub</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRAINING ===== -->
+  <section id="training" class="section section-dark">
+    <div class="sec-bg-glow glow-purple-l"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// growth</span>
+        <h2 class="section-title">Training & <span class="gradient-text">Experience</span></h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="timeline">
+        <div class="tl-line"></div>
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card tilt-card" data-color="cyan">
+            <div class="tlc-glow"></div>
+            <div class="tlc-hdr">
+              <div>
+                <span class="tl-tag">Summer Training</span>
+                <h3>Core DSA & Algorithm Training</h3>
+              </div>
+              <span class="tl-date"><i class="far fa-calendar-alt"></i> Jun â?" Jul 2025</span>
+            </div>
+            <div class="cert-img-container" style="height: 100px; margin-bottom: 25px;">
+              <div class="cert-placeholder"><span>DSA Logic Mapping...</span></div>
+            </div>
+            <ul class="tl-list">
+              <li>Completed conceptual training in core data structures, algorithms, and problem-solving methodologies
+              </li>
+              <li>Practiced competitive programming questions under expert mentors</li>
+              <li>Polished algorithm concepts for real-world problems</li>
+            </ul>
+            <div class="tl-chips"><span>DSA</span><span>Algorithms</span><span>Problem Solving</span><span>Competitive
+                Programming</span></div>
+              <a href="#" target="_blank" class="cert-btn tl-cert-btn"><i class="fas fa-external-link-alt"></i><span>View Certificate</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATES ===== -->
+  <section id="certs" class="section">
+    <div class="sec-bg-glow glow-pink-r"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// credentials</span>
+        <h2 class="section-title">Certificates & <span class="gradient-text">Badges</span></h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="certs-grid">
+        <div class="cert-card reveal tilt-card" data-color="cyan">
+          <div class="cc-glow"></div>
+          <div class="cc-icon-wrap"><i class="fas fa-robot"></i></div>
+          <h3>Build Generative AI Apps with No-Code Tools</h3>
+          <div class="cert-img-container">
+            <img src="genai_cert.jpg" alt="Gen AI Certificate" class="cert-preview-img">
+          </div>
+          <div class="cc-footer"><span class="cc-date">Dec 12, 2025</span><span class="cc-badge">Verified &check;</span></div>
+          <a href="https://ude.my/UC-8a608a04-a95f-4400-b3d1-967a3e804651" target="_blank" class="cert-btn"><i class="fas fa-external-link-alt"></i><span>View Certificate</span></a>
+        </div>
+        <div class="cert-card reveal tilt-card" data-color="purple">
+          <div class="cc-glow"></div>
+          <div class="cc-icon-wrap"><i class="fas fa-comments"></i></div>
+          <h3>Master Generative AI &amp; ChatGPT Tools</h3>
+          <div class="cert-img-container">
+            <img src="chatgpt_cert.jpg" alt="ChatGPT Certificate" class="cert-preview-img">
+          </div>
+          <div class="cc-footer"><span class="cc-date">Dec 12, 2025</span><span class="cc-badge">Verified &check;</span></div>
+          <a href="https://ude.my/UC-4c3f7f1e-132a-4ec2-9e79-86d2813a0470" target="_blank" class="cert-btn"><i class="fas fa-external-link-alt"></i><span>View Certificate</span></a>
+        </div>
+        <div class="cert-card reveal tilt-card" data-color="pink">
+          <div class="cc-glow"></div>
+          <div class="cc-icon-wrap"><i class="fab fa-free-code-camp"></i></div>
+          <h3>Responsive Web Design V8</h3>
+          <div class="cert-img-container">
+            <img src="fcc_cert.png" alt="freeCodeCamp Certificate" class="cert-preview-img">
+          </div>
+          <div class="cc-footer"><span class="cc-date">Oct 26, 2023</span><span class="cc-badge">Verified &check;</span></div>
+          <a href="https://freecodecamp.org/certification/fcc37ad05fe-60dc-410f-9957-cb254e87578a/responsive-web-design" target="_blank" class="cert-btn"><i class="fas fa-external-link-alt"></i><span>View Certificate</span></a>
+        </div>
+        <div class="cert-card reveal tilt-card" data-color="cyan">
+          <div class="cc-glow"></div>
+          <div class="cc-icon-wrap"><i class="fas fa-infinity"></i></div>
+          <h3>Computational Theory: Language Principle &amp; Finite Automata</h3>
+          <div class="cert-img-container">
+            <img src="comptheory_cert.jpg" alt="Computational Theory Certificate" class="cert-preview-img">
+          </div>
+          <div class="cc-footer"><span class="cc-date">Dec 23, 2025</span><span class="cc-badge">Verified &check;</span></div>
+          <a href="https://verify.onwingspan.com" target="_blank" class="cert-btn"><i class="fas fa-external-link-alt"></i><span>View Certificate</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ACHIEVEMENTS ===== -->
+  <section id="achievements" class="section section-dark">
+    <div class="sec-bg-glow glow-cyan-l"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// milestones</span>
+        <h2 class="section-title">Key <span class="gradient-text">Achievements</span></h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="ach-grid">
+        <div class="ach-card reveal tilt-card" data-color="cyan">
+          <div class="ac-glow"></div>
+          <div class="ac-num"><span class="count-up" data-target="150">0</span><span>+</span></div>
+          <h3>DSA Problems Solved</h3>
+          <p>Across LeetCode and GeeksforGeeks, strengthening algorithmic thinking and problem-solving skills.</p>
+          <span class="ac-date">Jul 2025</span>
+        </div>
+        <div class="ach-card reveal tilt-card" data-color="purple">
+          <div class="ac-glow"></div>
+          <div class="ac-num"><i class="fas fa-medal" style="font-size:2.5rem; color: var(--silver)"></i></div>
+          <h3>Silver Badge â?" Codeforces</h3>
+          <p>Solved 50+ Array problems using Java & DSA on Codeforces to earn Silver badge.</p>
+          <span class="ac-date">Apr 2025</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section id="education" class="section">
+    <div class="sec-bg-glow glow-purple-r"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// academia</span>
+        <h2 class="section-title">Education <span class="gradient-text">Timeline</span></h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="edu-timeline">
+        <div class="edu-line"></div>
+
+        <div class="edu-item reveal">
+          <div class="edu-dot edu-active"></div>
+          <div class="edu-card tilt-card" data-color="cyan">
+            <div class="ec-glow"></div>
+            <div class="ec-number">01</div>
+            <div class="ec-body">
+              <h3 class="ec-school">Lovely Professional University</h3>
+              <p class="ec-degree">B.Tech â?" Computer Science & Engineering</p>
+              <div class="ec-meta">
+                <span class="ec-grade">CGPA: <strong>7.00</strong></span>
+                <span class="ec-loc"><i class="fas fa-map-marker-alt"></i> Phagwara, Punjab</span>
+                <span class="ec-period">Since Aug '23</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-item reveal">
+          <div class="edu-dot"></div>
+          <div class="edu-card tilt-card" data-color="purple">
+            <div class="ec-glow"></div>
+            <div class="ec-number">02</div>
+            <div class="ec-body">
+              <h3 class="ec-school">G.B.S.S School</h3>
+              <p class="ec-degree">Intermediate</p>
+              <div class="ec-meta">
+                <span class="ec-grade"><strong>72%</strong></span>
+                <span class="ec-loc"><i class="fas fa-map-marker-alt"></i> Najafgarh, New Delhi</span>
+                <span class="ec-period">Apr '22 â?" Mar '23</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-item reveal">
+          <div class="edu-dot"></div>
+          <div class="edu-card tilt-card" data-color="pink">
+            <div class="ec-glow"></div>
+            <div class="ec-number">03</div>
+            <div class="ec-body">
+              <h3 class="ec-school">Evergreen Sr. Sec Public School</h3>
+              <p class="ec-degree">Matriculation</p>
+              <div class="ec-meta">
+                <span class="ec-grade"><strong>68%</strong></span>
+                <span class="ec-loc"><i class="fas fa-map-marker-alt"></i> Najafgarh, New Delhi</span>
+                <span class="ec-period">Apr '20 â?" Mar '21</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section section-dark">
+    <div class="sec-bg-glow glow-pink-l"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// connect</span>
+        <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+        <p class="sec-sub reveal">Whether you have an opportunity, project idea, or just want to say hi â?" I'd love to
+          hear from you.</p>
+        <div class="title-line"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="ci-item tilt-card" data-color="cyan">
+            <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h4>Email</h4><a href="mailto:Visheshrajput9310@gmail.com">Visheshrajput9310@gmail.com</a>
+            </div>
+          </div>
+          <div class="ci-item tilt-card" data-color="purple">
+            <div class="ci-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <h4>Phone</h4><a href="tel:+911234567890">+91-1234567890</a>
+            </div>
+          </div>
+          <div class="ci-item tilt-card" data-color="cyan">
+            <div class="ci-icon"><i class="fab fa-linkedin"></i></div>
+            <div>
+              <h4>LinkedIn</h4><a href="https://linkedin.com/in/Vishesh-tomar09" target="_blank">Vishesh-tomar09</a>
+            </div>
+          </div>
+          <div class="ci-item tilt-card" data-color="pink">
+            <div class="ci-icon"><i class="fab fa-github"></i></div>
+            <div>
+              <h4>GitHub</h4><a href="https://github.com/thakursahab9910" target="_blank">thakursahab9910</a>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contact-form">
+          <div class="cf-group">
+            <input type="text" id="cf-name" placeholder=" " required />
+            <label for="cf-name">Your Name</label>
+            <div class="cf-line"></div>
+          </div>
+          <div class="cf-group">
+            <input type="email" id="cf-email" placeholder=" " required />
+            <label for="cf-email">Email Address</label>
+            <div class="cf-line"></div>
+          </div>
+          <div class="cf-group">
+            <textarea id="cf-msg" rows="5" placeholder=" " required></textarea>
+            <label for="cf-msg">Message</label>
+            <div class="cf-line"></div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span class="btn-bg"></span>
+            <i class="fas fa-paper-plane"></i><span>Send Message</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <p>Designed & Built with <span class="hl-pink">â?</span><span class="gradient-text">Vishesh Tomar</span> &copy;
+        2025</p>
+      <div class="footer-links">
+        <a href="https://linkedin.com/in/Vishesh-tomar09" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/thakursahab9910" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:Visheshrajput9310@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
